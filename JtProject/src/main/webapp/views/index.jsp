@@ -86,7 +86,11 @@
                         <i class="fa fa-star"></i>
                       </div><!--endrating-->
                       <p class="cr1">$ 3.55-$ 5.55</s></p>
-                  <a href="/user/products" class="btn btn-food">Buy Now</a>
+                  <form action="/addToCart" method="post">
+                                  <input type="hidden" name="productId" value="14">
+                                  <input type="number" name="quantity" placeholder="Quantity" required>
+                                  <button type="submit" class="btn btn-food">Add to cart</button>
+                                </form>
                 </div><!--enddetails-->
               </div><!--endcol-->
             </div><!--endrow-->
@@ -109,7 +113,7 @@
                   <a href=""><b>2</b> <br> sec</a>
                 </div><!--endtop-->
                 <div class="details">
-                  <h2 class="cr3">cheeze pizza</h2>
+                  <h2 class="cr3">cheese pizza</h2>
                   <p class="cr4">margarita,<br> ketchup, maionese, ….</p>
                   <div class="rating">
                     <i class="fa fa-star"></i>
@@ -119,7 +123,11 @@
                     <i class="fa fa-star"></i>
                   </div><!--endrating-->
                   <p class="cr1">$ 3.55-$ 5.55</s></p>
-              <a href="/user/products" class="btn btn-food">Buy Now</a>
+              <form action="/addToCart" method="post">
+                <input type="hidden" name="productId" value="15">
+                <input type="number" name="quantity" placeholder="Quantity" required>
+                <button type="submit" class="btn btn-food">Add to cart</button>
+              </form>
             </div><!--enddetails-->
           </div><!--endcol-->
         </div><!--endrow-->
@@ -152,7 +160,11 @@
                     <i class="fa fa-star"></i>
                   </div><!--endrating-->
                   <p class="cr1">$ 3.55-$ 5.55</s></p>
-              <a href="/user/products" class="btn btn-food">Buy Now</a>
+              <form action="/addToCart" method="post">
+                              <input type="hidden" name="productId" value="16">
+                              <input type="number" name="quantity" placeholder="Quantity" required>
+                              <button type="submit" class="btn btn-food">Add to cart</button>
+                            </form>
             </div><!--enddetails-->
           </div><!--endcol-->
         </div><!--endrow-->

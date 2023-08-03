@@ -11,7 +11,8 @@ import com.mysql.cj.protocol.Resultset;
 @Controller
 public class AdminController {
 	int adminlogcheck = 0;
-	String usernameforclass = "";
+	static String usernameforclass = "";
+	static int userID;
 	@RequestMapping(value = {"/","/logout"})
 	public String returnIndex() {
 		adminlogcheck =0;
@@ -47,6 +48,7 @@ public class AdminController {
 			ResultSet rst = stmt.executeQuery("select * from users where username = '"+username+"' and password = '"+ pass+"' ;");
 			if(rst.next()) {
 				usernameforclass = rst.getString(2);
+				userID = rst.getInt(1);
 				return "redirect:/index";
 				}
 			else {
