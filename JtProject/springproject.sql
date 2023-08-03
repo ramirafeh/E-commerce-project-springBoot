@@ -89,34 +89,6 @@ INSERT INTO `products` (`id`, `name`, `image`, `categoryid`, `quantity`, `price`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `past purchases`
---
-
-CREATE TABLE `purchases` (
-     `purchase_id` int(11) NOT NULL AUTO_INCREMENT,
-     `user_id` int(11) NOT NULL,
-     `product_id` int(11) NOT NULL,
-     `purchase_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-     PRIMARY KEY (`purchase_id`),
-     KEY `purchases_user_id_fk` (`user_id`),
-     KEY `purchases_product_id_fk` (`product_id`),
-     CONSTRAINT `purchases_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE,
-     CONSTRAINT `purchases_product_id_fk` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `purchases`
---
-
-INSERT INTO `purchases` (`user_id`, `product_id`) VALUES
-(1, 14), -- User 1 purchased Product ID 14
-(1, 16), -- User 1 purchased Product ID 16
-(2, 15), -- User 2 purchased Product ID 15
-(2, 16); -- User 2 purchased Product ID 16
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `users`
 --
 
@@ -129,15 +101,6 @@ CREATE TABLE `users` (
   `email` varchar(110) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Check for 80%
---
-
-SELECT p1.product_id AS product1, p2.product_id AS product2, COUNT(*) AS frequency
-FROM purchases p1
-JOIN purchases p2 ON p1.user_id = p2.user_id AND p1.product_id < p2.product_id
-GROUP BY p1.product_id, p2.product_id
-HAVING frequency >= (SELECT COUNT(*) FROM purchases) * 0.8;
 
 --
 -- Dumping data for table `users`
@@ -199,6 +162,8 @@ ALTER TABLE `users`
 --
 -- Constraints for table `products`
 --
+
+
 ALTER TABLE `products`
   ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`categoryid`) REFERENCES `categories` (`categoryid`) ON DELETE CASCADE;
 COMMIT;
@@ -207,6 +172,47 @@ ALTER TABLE `users`
 CHANGE COLUMN `role` `role` VARCHAR(250) NULL;
 
 ALTER TABLE `users` CHANGE COLUMN `role` `role` VARCHAR(250) NOT NULL DEFAULT 'ROLE_USERS';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `past purchases`
+--
+
+CREATE TABLE purchases(
+                          purchase_id int(11) NOT NULL,
+                          user_id int(11) NOT NULL,
+                          product_id int(11) NOT NULL,
+                          purchase_date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                          PRIMARY KEY (purchase_id, user_id, product_id)
+);
+
+--
+-- Dumping data for table `purchases`
+--
+
+
+INSERT INTO purchases (purchase_id, user_id, product_id) VALUES
+     (1, 123, 32),
+     (1, 123, 15),
+     (1, 123, 43),
+     (2, 133, 15),
+     (2, 133, 43),
+     (3, 223, 15),
+     (4, 323, 15),
+     (4, 323, 43),
+     (5, 123, 15),
+     (5, 123, 32);
+
+--
+-- Check for 80%
+--
+
+SELECT p1.product_id AS product1, p2.product_id AS product2, COUNT(*) AS frequency
+FROM purchases p1
+JOIN purchases p2 ON p1.user_id = p2.user_id AND p1.product_id < p2.product_id AND p1.purchase_id = p2.purchase_id
+GROUP BY p1.product_id, p2.product_id
+HAVING frequency >= (SELECT COUNT() FROM purchases) * 0.8;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
