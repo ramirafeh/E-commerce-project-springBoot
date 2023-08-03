@@ -68,7 +68,7 @@ public class UserController{
 		}
 		return "redirect:/user/products";
 	}
-	
+
 	@GetMapping("/user/products")
 	public String getproduct(Model model) {
 		model.addAttribute("username", usernameforclass);
@@ -118,12 +118,12 @@ public class UserController{
 			pst.setString(1,username);
 			pst.setString(2, password);
 			pst.setString(3, email);
-			
+
 
 			//pst.setString(4, address);
 			int i = pst.executeUpdate();
 			System.out.println("data base updated"+i);
-			
+
 		}
 		catch(Exception e)
 		{
