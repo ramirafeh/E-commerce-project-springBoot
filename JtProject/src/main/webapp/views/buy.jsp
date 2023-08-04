@@ -8,161 +8,211 @@
 </head>
 <body>
 
-
-					
-<div class="body-text">Write your name in the right fields. Also write your imaginary card number. By clicking CCV field card will turn.</div>
-
-  <form>
+  <body data-new-gr-c-s-check-loaded="14.1117.0" data-gr-ext-installed="">
+  
     <div class="form-container">
-      <div class="personal-information">
-        <h1>Payment Information</h1>
-      </div> <!-- end of personal-information -->
+         <div class="personal-information">
+          <h1>Basket</h1>
+        </div>
+        <p>Product 1 <span class="price">$15</span></p>
+        <p>Product 2 <span class="price">$5</span></p>
+        <p>Product 3 <span class="price">$8</span></p>
+        <p>Product 4 <span class="price">$2</span></p>
+        <hr>
+  
+        <button class="button button2">Apply coupon</button>
+        <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+      </div>
+    
+  
+            
+  <div class="body-text">Write your name in the right fields. Also write your imaginary card number. By clicking CCV field card will turn.</div>
+  
+    <form>
+      <div class="form-container">
+        <div class="personal-information">
+          <h1>Payment Information</h1>
+        </div> <!-- end of personal-information -->
+             
+            <input id="column-left" type="text" name="first-name" placeholder="First Name">
+            <input id="column-right" type="text" name="last-name" placeholder="Surname">
+            <input id="input-field" type="text" name="number" placeholder="Card Number">
+            <input id="column-left" type="text" name="expiry" placeholder="MM / YY">
+            <input id="column-right" type="text" name="cvc" placeholder="CCV">
            
-          <input id="column-left" type="text" name="first-name" placeholder="First Name"/>
-          <input id="column-right" type="text" name="last-name" placeholder="Surname"/>
-          <input id="input-field" type="text" name="number" placeholder="Card Number"/>
-          <input id="column-left" type="text" name="expiry" placeholder="MM / YY"/>
-          <input id="column-right" type="text" name="cvc" placeholder="CCV"/>
-         
-          <div class="card-wrapper"></div>
-      
-          <input id="input-field" type="text" name="streetaddress" required="required" autocomplete="on" maxlength="45" placeholder="Streed Address"/>
-          <input id="column-left" type="text" name="city" required="required" autocomplete="on" maxlength="20" placeholder="City"/>
-          <input id="column-right" type="text" name="zipcode" required="required" autocomplete="on" pattern="[0-9]*" maxlength="5" placeholder="ZIP code"/>
-          <input id="input-field" type="email" name="email" required="required" autocomplete="on" maxlength="40" placeholder="Email"/>
-          <input id="input-button" type="submit" value="Submit"/>
+            <div class="card-wrapper"></div>
         
-    </form>
-  </div>
-<style>
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,900,700,500);
-
-body {
-  padding: 60px 0;
-  background-color: rgba(178,209,229,0.7);
-  margin: 0 auto;
-  width: 600px;
-}
-.body-text {
-  padding: 0 20px 30px 20px;
-  font-family: "Roboto";
-  font-size: 1em;
-  color: #333;
-  text-align: center;
-  line-height: 1.2em;
-}
-.form-container {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.card-wrapper {
-  background-color: #6FB7E9;
-  width: 100%;
-  display: flex;
-
-}
-.personal-information {
-  background-color: #3C8DC5;
-  color: #fff;
-  padding: 1px 0;
-  text-align: center;
-}
-h1 {
-  font-size: 1.3em;
-  font-family: "Roboto"
-}
-input {
-  margin: 1px 0;
-  padding-left: 3%;
-  font-size: 14px;
-}
-input[type="text"]{
-  display: block;
-  height: 50px;
-  width: 97%;
-  border: none;
-}
-input[type="email"]{
-  display: block;
-  height: 50px;
-  width: 97%;
-  border: none;
-}
-input[type="submit"]{
-  display: block;
-  height: 60px;
-  width: 100%;
-  border: none;
-  background-color: #3C8DC5;
-  color: #fff;
-  margin-top: 2px;
-  curson: pointer;
-  font-size: 0.9em;
-  text-transform: uppercase;
-  font-weight: bold;
-  cursor: pointer;
-}
-input[type="submit"]:hover{
-  background-color: #6FB7E9;
-  transition: 0.3s ease;
-}
-#column-left {
-  width: 46.5%;
-  float: left;
-  margin-bottom: 2px;
-}
-#column-right {
-  width: 46.5%;
-  float: right;
-}
-
-@media only screen and (max-width: 480px){
+            <input id="input-field" type="text" name="streetaddress" required="required" autocomplete="on" maxlength="45" placeholder="Streed Address">
+            <input id="column-left" type="text" name="city" required="required" autocomplete="on" maxlength="20" placeholder="City">
+            <input id="column-right" type="text" name="zipcode" required="required" autocomplete="on" pattern="[0-9]*" maxlength="5" placeholder="ZIP code">
+            <input id="input-field" type="email" name="email" required="required" autocomplete="on" maxlength="40" placeholder="Email">
+            <input id="input-button" type="submit" value="Submit">
+          
+      
+   
+  
+  <style>
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,900,700,500);
+  
+  
   body {
-    width: 100%;
+    padding: 60px 0;
+    background-color: rgba(178,209,229,0.7);
     margin: 0 auto;
+    width: 600px;
+  }
+  
+  .cart {
+    background-color: #3C8DC5;
+    color: #fff;
+    padding: 1px 0;
+    text-align: center;
+  
+  }
+  .container {
+    background-color: #f2f2f2;
+    padding: 5px 20px 15px 20px;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+  }
+  span.price {
+    float: right;
+    color: black;
+  }
+  .button {
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #3C8DC5;
+  }
+  .body-text {
+    padding: 0 20px 30px 20px;
+    font-family: "Roboto";
+    font-size: 1em;
+    color: #333;
+    text-align: center;
+    line-height: 1.2em;
   }
   .form-container {
-    margin: 0 2%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-  input {
-    font-size: 1em;
-  }
-  #input-button {
+  .card-wrapper {
+    background-color: #6FB7E9;
     width: 100%;
+    display: flex;
+  
   }
-  #input-field {
-    width: 96.5%;
+  .personal-information {
+    background-color: #3C8DC5;
+    color: #fff;
+    padding: 1px 0;
+    text-align: center;
   }
   h1 {
-    font-size: 1.2em;
+    font-size: 1.3em;
+    font-family: "Roboto"
   }
   input {
-    margin: 2px 0;
+    margin: 1px 0;
+    padding-left: 3%;
+    font-size: 14px;
+  }
+  input[type="text"]{
+    display: block;
+    height: 50px;
+    width: 97%;
+    border: none;
+  }
+  input[type="email"]{
+    display: block;
+    height: 50px;
+    width: 97%;
+    border: none;
   }
   input[type="submit"]{
-    height: 50px;
+    display: block;
+    height: 60px;
+    width: 100%;
+    border: none;
+    background-color: #3C8DC5;
+    color: #fff;
+    margin-top: 2px;
+    curson: pointer;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover{
+    background-color: #6FB7E9;
+    transition: 0.3s ease;
   }
   #column-left {
-    width: 96.5%;
-    display: block;
-    float: none;
+    width: 46.5%;
+    float: left;
+    margin-bottom: 2px;
   }
   #column-right {
-    width: 96.5%;
-    display: block;
-    float: none;
+    width: 46.5%;
+    float: right;
   }
-}</style>
-<script>
-$('form').card({
-    container: '.card-wrapper',
-    width: 280,
-
-    formSelectors: {
-        nameInput: 'input[name="first-name"], input[name="last-name"]'
+  
+  @media only screen and (max-width: 480px){
+    body {
+      width: 100%;
+      margin: 0 auto;
     }
-});
-</script>
+    .form-container {
+      margin: 0 2%;
+    }
+    input {
+      font-size: 1em;
+    }
+    #input-button {
+      width: 100%;
+    }
+    #input-field {
+      width: 96.5%;
+    }
+    h1 {
+      font-size: 1.2em;
+    }
+    input {
+      margin: 2px 0;
+    }
+    input[type="submit"]{
+      height: 50px;
+    }
+    #column-left {
+      width: 96.5%;
+      display: block;
+      float: none;
+    }
+    #column-right {
+      width: 96.5%;
+      display: block;
+      float: none;
+    }
+  }</style>
+  <script>
+  $('form').card({
+      container: '.card-wrapper',
+      width: 280,
+  
+      formSelectors: {
+          nameInput: 'input[name="first-name"], input[name="last-name"]'
+      }
+  });
+  </script>
+  
+ 
 </body>
 </html>

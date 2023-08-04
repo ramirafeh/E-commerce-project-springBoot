@@ -30,9 +30,29 @@ public class UserController{
 		return "contact";
 	}
 	@GetMapping("/buy")
-	public String buy()
+	public String updateCouponsDb(@RequestParam("user_id") int id)
 	{
-		return "buy";
+		try
+		{
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/springproject","root","");
+			Statement stmt = con.createStatement();
+			
+			PreparedStatement pst = con.prepareStatement("select coupons from users where user_id = "+id+";");
+			PreparedStatement pst1 = con.prepareStatement("select amount from purchases where user_id = "+id+";");
+			
+			if(pst.getInt(1)>1){
+				pst.setInt(1)--
+				pst1.setInt(1)= pst1.getInt(1)-5
+			}
+			
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println("Exception:"+e);
+		}
+		return "redirect:/buy";
 	}
 	@PostMapping("/addToCart")
 	public String addToCart(@RequestParam("productId") String productId, @RequestParam("quantity") String quantity)
