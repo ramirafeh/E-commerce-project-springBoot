@@ -82,8 +82,8 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `image`, `categoryid`, `quantity`, `price`, `weight`, `description`) VALUES
-(14, 'dfgdg', '1.jpg', 6, 7275275, 24, 27, ''),
-(15, 'dfgdg', '2.jpg', 6, 7275275, 24, 27, ''),
+(14, 'burger', '1.jpg', 6, 7275275, 24, 27, ''),
+(15, 'cheese pizza', '2.jpg', 6, 7275275, 24, 27, ''),
 (16, 'apple', '', 11, 5, 30, 10, 'red python');
 
 -- --------------------------------------------------------
@@ -112,7 +112,19 @@ INSERT INTO `users` (`user_id`, `username`, `password`, `role`, `enabled`, `emai
 --
 -- Indexes for dumped tables
 --
+CREATE TABLE userBaskets (
+  `user_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `product_quantity` int(11) NOT NULL
+);
 
+INSERT INTO userBaskets (`user_id`, `product_id`, `product_quantity`) VALUES
+(1, 14, 1),
+(1, 15, 2),
+(1, 16, 3),
+(2, 14, 3),
+(2, 15, 2),
+(2, 16, 1);
 --
 -- Indexes for table `categories`
 --
@@ -170,6 +182,22 @@ CHANGE COLUMN `role` `role` VARCHAR(250) NULL;
 
 ALTER TABLE `users` CHANGE COLUMN `role` `role` VARCHAR(250) NOT NULL DEFAULT 'ROLE_USERS';
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+CREATE TABLE purchases(
+                          purchase_id int(11) NOT NULL,
+                          user_id int(11) NOT NULL,
+                          product_id int(11) NOT NULL
+                          );
+
+--
+-- Dumping data for table `purchases`
+--
+
+
+INSERT INTO purchases (purchase_id, user_id, product_id) VALUES
+     (1, 1, 14),
+     (1, 1, 14),
+     (1, 1, 16),
+     (2, 2, 16),
+     (2, 2, 15),
+     (2, 2, 15),
+     (2, 2, 15);
