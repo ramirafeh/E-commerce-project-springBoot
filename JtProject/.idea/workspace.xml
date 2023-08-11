@@ -50,7 +50,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.purchase_test">
+  <component name="RunManager" selected="Spring Boot.JtSpringProjectApplication">
     <configuration name="purchase_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JtSpringProject" />
       <option name="PACKAGE_NAME" value="" />
@@ -87,7 +87,7 @@
       <workItem from="1690999798210" duration="8920000" />
       <workItem from="1691103041266" duration="1652000" />
       <workItem from="1691683913184" duration="1235000" />
-      <workItem from="1691788660732" duration="1017000" />
+      <workItem from="1691788660732" duration="1437000" />
     </task>
     <servers />
   </component>
