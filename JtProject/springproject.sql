@@ -182,6 +182,27 @@ CHANGE COLUMN `role` `role` VARCHAR(250) NULL;
 
 ALTER TABLE `users` CHANGE COLUMN `role` `role` VARCHAR(250) NOT NULL DEFAULT 'ROLE_USERS';
 
+CREATE TABLE purchases(
+                          purchase_id int(11) NOT NULL,
+                          user_id int(11) NOT NULL,
+                          product_id int(11) NOT NULL
+                          );
+
+--
+-- Dumping data for table `purchases`
+--
+
+
+INSERT INTO purchases (purchase_id, user_id, product_id) VALUES
+     (1, 1, 14),
+     (1, 1, 14),
+     (1, 1, 16),
+     (2, 2, 16),
+     (2, 2, 15),
+     (2, 2, 15),
+     (2, 2, 15);
+
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
